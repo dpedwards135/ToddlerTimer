@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.davidparkeredwards.toddlertimer.SetTimer">
+
+    <LinearLayout
+        android:id="@+id/popupview"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:background="@color/popUpBackground">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Minutes"
+            android:textSize="30dp"
+            android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="30dp"
+                android:text="-"/>
+            <TextView
+                android:id="@+id/minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50dp"
+                android:text="5"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"/>
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="30dp"
+                android:text="+"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm Sound"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:padding="8dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sounds">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cow"
+                android:textSize="25dp"
+                android:id="@+id/cow"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Donkey"
+                android:textSize="25dp"
+                android:id="@+id/donkey"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sheep"
+                android:textSize="25dp"
+                android:id="@+id/sheep"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horse"
+                android:textSize="25dp"
+                android:id="@+id/horse"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pig"
+                android:textSize="25dp"
+                android:id="@+id/pig"/>
+        </RadioGroup>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Timer"
+            android:onClick="submitNewTimer"/>
+    </LinearLayout>
+
+</RelativeLayout>
