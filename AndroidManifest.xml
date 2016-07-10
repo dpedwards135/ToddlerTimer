@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".SetTimer" />
         <activity android:name=".Test" />
-        <activity android:name=".Timer"></activity>
+        <activity android:name=".Timer" />
+        <activity android:name=".NewClock"></activity>
     </application>
 
 </manifest>
