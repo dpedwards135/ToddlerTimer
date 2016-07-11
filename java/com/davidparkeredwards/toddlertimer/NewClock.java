@@ -57,7 +57,7 @@ public class NewClock extends AppCompatActivity {
                 @Override
                 public void run() {
                     TextView changeText = (TextView) findViewById(R.id.generalDisplay);
-                    changeText.setText("Seconds left" + (10 - controlTimer.timeLength));
+                    changeText.setText("Minutes left" + (controlTimer.timeLength - repititions));
                 }
             });
 
