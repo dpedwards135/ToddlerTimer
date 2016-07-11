@@ -22,10 +22,9 @@ import java.util.TimerTask;
 
 public class NewClock extends AppCompatActivity {
    //Global variables
+    TimerRequest controlTimer;
     int repititions = 0;
-  //  TimerRequest newTimer = getIntent().getParcelableExtra("newTimer"); //HERE IS THE PROBLEM - FIX THE PARCELABLE TO RECREATE OBJECT
     Timer clock = new Timer();
-
 
     //All action runs onCreate, so onCreate method contains methods to run
     @Override
@@ -33,20 +32,21 @@ public class NewClock extends AppCompatActivity {
         Log.i("OnCreate", "onCreate: Creating");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_clock);
-        //operateClock();
+
+        TimerRequest newTimer = getIntent().getParcelableExtra("newTimer");
+        Log.i("OnCreate", "onCreate: "+ newTimer.timeLength);
+        controlTimer = newTimer;
+
+        clock.schedule(new runClock(),1000,1000);
     }
 
-/*
-    public void operateClock() {
-        clock.schedule(new runClock(), 1000, 1000);
-    }
 
     class runClock extends TimerTask {
         public void run() {
             Log.e("runClock", "Repetitions are " + repititions);
             repititions += 1;
             changeText();
-            if (repititions >= newTimer.timeLength) {
+            if (repititions >= controlTimer.timeLength) {
                 clock.cancel();
                 Log.e("End", "Activity Ending");
             }
@@ -57,11 +57,11 @@ public class NewClock extends AppCompatActivity {
                 @Override
                 public void run() {
                     TextView changeText = (TextView) findViewById(R.id.generalDisplay);
-                    changeText.setText("Seconds left" + (10 - newTimer.timeLength));
+                    changeText.setText("Seconds left" + (10 - controlTimer.timeLength));
                 }
             });
 
     }
-*/
+
 }
 
